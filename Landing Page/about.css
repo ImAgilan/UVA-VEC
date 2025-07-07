@@ -1,0 +1,70 @@
+
+/* About Section */
+.about {
+margin-top: 100px;
+    position: relative;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--electric-blue);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.8;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    
+    background: var(--glass-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--electric-blue);
+    
+    border-radius: 15px;
+    padding:70px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.stat-item:hover {
+    border-color: var(--electric-blue);
+    transform: translateY(-15px) scale(1.2);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--electric-blue);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}

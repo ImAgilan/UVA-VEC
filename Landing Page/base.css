@@ -1,0 +1,259 @@
+/* Root Variables */
+:root {
+    --gradient-bg: linear-gradient(135deg, #0a0a0f 0%, #0a0a1a 50%, #0a0a0f 100%);
+    --electric-blue: #00d4ff;
+    --electric-purple: #8a2be2;
+    --neon-green: #39ff14;
+    --dark-card: rgba(15, 15, 25, 0.9);
+    --glass-card: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent-color: #4f46e5;
+    --text-light: #ffffff;
+    --text-dark: #1f2937;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    /* Replace with image URLs */
+    --parallax-layer-1: url('/bg2.jpg');
+    --parallax-layer-2: url('/bg3.jpg');
+    --parallax-layer-3: url('bg4.jpg');
+    --parallax-layer-4: var(--gradient-bg); /* Keep your original gradient as base */
+}
+
+
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-bg);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add to your existing CSS */
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+.parallax-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.parallax-layer {
+    margin-top: -1000px;
+    position: absolute;
+    width: 200%;
+    height:345%;
+    background-repeat: repeat;
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Layer 1 - Blue Tech Pattern */
+.layer-1 {
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: translateZ(-3px) scale(4);
+    animation: drift 60s linear infinite;
+}
+
+/* Layer 2 - Purple Circuit */
+.layer-2 {
+    background-image: 
+        radial-gradient(circle, rgb(0, 131, 254) 1px, transparent 1px);
+    background-size: 80px 80px;
+    transform: translateZ(-2px) scale(3);
+    animation: drift 80s linear infinite reverse;
+}
+
+/* Layer 3 - Green Grid */
+.layer-3 {
+    background-image: 
+        linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
+    transform: translateZ(-1px) scale(2);
+    animation: drift 40s linear infinite;
+}
+
+/* Base Gradient Layer */
+.layer-4 {
+    background: var(--gradient-bg);
+    transform: translateZ(0);
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+}
+
+/* Content Wrapper - Important for z-index */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Mobile Adaptation */
+@media (max-width: 768px) {
+    .parallax-layer {
+        animation: none !important;
+        background-size: 80px 80px !important;
+    }
+    .layer-1 { opacity: 0.3; }
+    .layer-2 { opacity: 0.2; }
+    .layer-3 { opacity: 0.1; }
+}
+
+
+
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    color: var(--electric-blue);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInOut 2s infinite;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, 
+        var(--electric-blue), 
+        rgba(0, 212, 255, 0));
+    border-radius: 2px;
+    animation: scrollBounce 2s infinite;
+}
+
+/* Animations */
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+        height: 40px;
+    }
+    50% {
+        transform: translateY(10px);
+        height: 30px;
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 8px var(--electric-blue);
+    }
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none;
+    }
+}

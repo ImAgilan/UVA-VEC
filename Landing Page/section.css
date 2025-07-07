@@ -1,0 +1,244 @@
+
+
+
+
+
+
+/* Services Section */
+.services {
+  
+    position: relative;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.services-header h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--electric-blue);
+    margin-bottom: 30px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.services-header p {
+    font-size: 22px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.service-row:nth-child(even) {
+    direction: rtl;
+}
+
+.service-row:nth-child(even) > * {
+    direction: ltr;
+}
+
+.service-content {
+    position: relative;
+}
+
+.service-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, var(--electric-blue));
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.service-title {
+    
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--electric-blue);
+    margin-bottom: 25px;
+    line-height: 1.2;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.service-description {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    line-height: 1.7;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.service-features li {
+    padding: 10px 0;
+    color: var(--text-primary);
+    position: relative;
+    padding-left: 30px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.service-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--electric-blue);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.service-visual {
+    position: relative;
+    height: 400px;
+    background: var(--glass-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.service-visual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(138, 43, 226, 0.1));
+    transform: translateY(0);
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+}
+
+.service-row:hover .service-visual::after {
+    transform: translateY(-600px);
+}
+
+.service-icon-large {
+    font-size: 120px;
+    background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.service-visual:hover .service-icon-large {
+    transform: scale(1.1);
+}
+
+.service-bg-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.service-bg-element {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--electric-blue), transparent);
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite;
+    filter: blur(10px);
+}
+
+.service-bg-element:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.service-bg-element:nth-child(2) {
+    top: 60%;
+    right: 30%;
+    animation-delay: 2s;
+}
+
+.service-bg-element:nth-child(3) {
+    bottom: 20%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+
+/* Updated Service Visual with GIF */
+.service-visual {
+    position: relative;
+    height: 600px;
+    background: var(--glass-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.service-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.service-row:hover .service-visual {
+    transform: translateY(-50px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    border-color: var(--electric-blue);
+}
+
+.service-row:hover .service-gif {
+    transform: scale(1.2);
+}
+
+/* Remove the old service visual elements */
+.service-icon-large,
+.service-bg-elements,
+.service-bg-element {
+    display: none;
+}
+
+/* Keep the rest of your existing service section styles */

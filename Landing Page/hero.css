@@ -1,0 +1,253 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    overflow: hidden;
+    color: var(--text-primary);
+    z-index: 2;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/b.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: zoomEffect 20s infinite alternate ease-in-out;
+    filter: brightness(0.7);
+     filter: brightness(0.7) blur(05px);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-text {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    background: linear-gradient(var(--electric-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+   text-shadow: 0 2px 2px rgba(255, 255, 255, 0.2b);
+}
+
+.hero-subtext {
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    max-width: 600px;
+    min-height: 72px; /* Ensure space for text during animation */
+    display: inline-block; /* Needed for the typing cursor */
+    position: relative;
+    transform: translateY(0); /* Remove the previous transform */
+    opacity: 1; /* Remove the previous opacity animation */
+}
+
+/* Add a typing cursor effect */
+.hero-subtext::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    opacity: 0;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Stop the cursor when animation completes */
+.gsap-text-complete .hero-subtext::after {
+    animation: none;
+    opacity: 0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.hero-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.hero-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+     animation: zoomEffect 20s infinite alternate ease-in-out;
+}
+
+/* Keyframes for background zoom effect */
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .hero-text {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+    
+    .hero-subtext {
+        margin: 0 auto 40px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .hero-visual {
+        height: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 48px);
+    }
+    
+    .hero-subtext {
+        font-size: 18px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-visual {
+        height: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Clients Marquee */
+.clients-marquee {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 80%;
+    overflow: hidden;
+    z-index: 4;
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-item img {
+    max-height: 40px;
+    max-width: 120px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.marquee-item img:hover {
+    opacity: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .clients-marquee {
+        bottom: 20px;
+    }
+    
+    .marquee-item {
+        padding: 0 20px;
+    }
+    
+    .marquee-item img {
+        max-height: 30px;
+        max-width: 90px;
+    }
+}
