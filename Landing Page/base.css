@@ -28,11 +28,11 @@
 
 
     
-    /* Replace with image URLs */
+   
     --parallax-layer-1: url('/bg2.jpg');
     --parallax-layer-2: url('/bg3.jpg');
     --parallax-layer-3: url('bg4.jpg');
-    --parallax-layer-4: var(--gradient-bg); /* Keep your original gradient as base */
+    --parallax-layer-4: var(--gradient-bg); 
 }
 
 
@@ -101,7 +101,7 @@ body {
 
 
 
-/* Add to your existing CSS */
+
 .parallax-container {
     position: relative;
     height: 100vh;
@@ -157,7 +157,7 @@ body {
     animation: drift 40s linear infinite;
 }
 
-/* Base Gradient Layer */
+
 .layer-4 {
     background: var(--gradient-bg);
     transform: translateZ(0);
@@ -170,7 +170,7 @@ body {
     100% { background-position: 1000px 1000px; }
 }
 
-/* Content Wrapper - Important for z-index */
+
 .content-wrapper {
     position: relative;
     z-index: 1;
