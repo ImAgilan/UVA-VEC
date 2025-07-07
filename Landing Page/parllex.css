@@ -2,7 +2,7 @@
 .parallax-section {
     position: relative;
     overflow: hidden;
-    height: 100vh; 
+    height: 100vh; /* or your desired height */
 }
 
 .parallax-bg {
@@ -13,6 +13,6 @@
     left: 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* This creates the parallax effect */
     z-index: -1;
 }

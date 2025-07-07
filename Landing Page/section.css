@@ -199,7 +199,7 @@
 }
 
 
-
+/* Updated Service Visual with GIF */
 .service-visual {
     position: relative;
     height: 600px;
@@ -234,10 +234,11 @@
     transform: scale(1.2);
 }
 
-
+/* Remove the old service visual elements */
 .service-icon-large,
 .service-bg-elements,
 .service-bg-element {
     display: none;
 }
 
+/* Keep the rest of your existing service section styles */

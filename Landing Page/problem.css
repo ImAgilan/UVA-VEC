@@ -1,0 +1,68 @@
+/* Problem Section */
+.problem {
+background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+/* Deep navy to slightly lighter navy */
+}
+
+.problem-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.problem h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--electric-blue);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.problem p {
+    font-size: 22px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+/* Animation Classes */
+.animate-heading {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.animate-paragraph {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease 0.2s;
+}
+
+.animate-active .animate-heading,
+.animate-active .animate-paragraph {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .problem h2 {
+        font-size: 36px;
+    }
+    
+    .problem p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem h2 {
+        font-size: 32px;
+    }
+    
+    .problem p {
+        font-size: 16px;
+    }
+}
