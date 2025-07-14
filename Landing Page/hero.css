@@ -188,21 +188,31 @@
 
 
 
-
 /* Clients Marquee */
 .clients-marquee {
     position: absolute;
-    bottom: 90px;
-    left: 0;
-    width: 80%;
+    bottom: 80px;
+    left: 46%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
     overflow: hidden;
     z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
 .marquee-track {
     display: flex;
     align-items: center;
-    width: 1200px;
+    width: max-content;
     animation: marquee 30s linear infinite;
     will-change: transform;
 }
@@ -236,10 +246,41 @@
     }
 }
 
+/* Fade edges for smooth effect */
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+    .clients-marquee {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .clients-marquee {
         bottom: 20px;
+        max-width: 95%;
+        padding: 0 10px;
     }
     
     .marquee-item {
@@ -250,4 +291,71 @@
         max-height: 30px;
         max-width: 90px;
     }
+    
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 50px;
+    }
 }
+
+@media (max-width: 480px) {
+    .clients-marquee {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+    
+    .marquee-item {
+        padding: 0 15px;
+    }
+    
+    .marquee-item img {
+        max-height: 25px;
+        max-width: 70px;
+    }
+    
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 30px;
+    }
+}
+
+/* Alternative: Static centered version for very small screens */
+@media (max-width: 320px) {
+    .marquee-track {
+        animation: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .marquee-item {
+        padding: 5px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
