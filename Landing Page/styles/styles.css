@@ -1,0 +1,436 @@
+/* Root Variables */
+:root {
+    --gradient-bg: linear-gradient(135deg, #0a0a0f 0%, #0a0a1a 50%, #0a0a0f 100%);
+    --electric-blue: #00d4ff;
+    --electric-purple: #8a2be2;
+    --neon-green: #39ff14;
+    --dark-card: rgba(15, 15, 25, 0.9);
+    --glass-card: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent-color: #4f46e5;
+    --text-light: #ffffff;
+    --text-dark: #1f2937;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    
+    /* Replace with image URLs */
+
+    
+    /* Responsive spacing variables */
+    --section-padding: 120px;
+    --container-padding: 20px;
+    --grid-gap: 60px;
+}
+
+/* Mobile-first responsive variables */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 60px;
+        --container-padding: 15px;
+        --grid-gap: 30px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --section-padding: 80px;
+        --container-padding: 20px;
+        --grid-gap: 40px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --section-padding: 100px;
+        --container-padding: 30px;
+        --grid-gap: 50px;
+    }
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-bg);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Fix background attachment on mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+}
+
+.section {
+    padding: var(--section-padding) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Enhanced Parallax Container */
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    width: 100%;
+}
+
+.parallax-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.parallax-layer {
+    margin-top: -3500px;
+    position: absolute;
+    width: 200%;
+    height: 445%;
+    background-repeat: repeat;
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Layer 1 - Blue Tech Pattern */
+.layer-1 {
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: translateZ(-3px) scale(4);
+    animation: drift 60s linear infinite;
+}
+
+/* Layer 2 - Purple Circuit */
+.layer-2 {
+    background-image: 
+        radial-gradient(circle, rgb(0, 131, 254) 1px, transparent 1px);
+    background-size: 80px 80px;
+    transform: translateZ(-2px) scale(3);
+    animation: drift 80s linear infinite reverse;
+}
+
+/* Layer 3 - Green Grid */
+.layer-3 {
+    background-image: 
+        linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
+    transform: translateZ(-1px) scale(2);
+    animation: drift 40s linear infinite;
+}
+
+/* Base Gradient Layer */
+.layer-4 {
+    background: var(--gradient-bg);
+    transform: translateZ(0);
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes drift {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+.scroll-text {
+    color: var(--electric-blue);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInOut 2s infinite;
+}
+
+.scroll-line {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, 
+        var(--electric-blue), 
+        rgba(0, 212, 255, 0));
+    border-radius: 2px;
+    animation: scrollBounce 2s infinite;
+}
+
+/* Animations */
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+        height: 40px;
+    }
+    50% {
+        transform: translateY(10px);
+        height: 30px;
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 8px var(--electric-blue);
+    }
+}
+
+/* ENHANCED RESPONSIVE DESIGN */
+
+/* Mobile Phones (Portrait) */
+@media (max-width: 480px) {
+    .parallax-container {
+        height: 100vh;
+        perspective: none; /* Disable perspective on small screens */
+    }
+    
+    .parallax-layer {
+        animation: none !important;
+        background-size: 30px 30px !important;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        position: fixed;
+        transform: none !important;
+    }
+    
+    .layer-1 { 
+        opacity: 0.15;
+        background-size: 25px 25px;
+    }
+    .layer-2 { 
+        opacity: 0.1;
+        background-size: 40px 40px;
+    }
+    .layer-3 { 
+        opacity: 0.05;
+        background-size: 50px 50px;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+}
+
+/* Mobile Phones (Landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+    .parallax-container {
+        height: 100vh;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .scroll-indicator {
+        bottom: 15px;
+        transform: translateX(-50%) scale(0.8);
+    }
+    
+    .scroll-text {
+        font-size: 12px;
+    }
+    
+    .scroll-line {
+        height: 30px;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .parallax-layer {
+        animation-duration: 120s !important;
+        background-size: 60px 60px !important;
+        width: 150%;
+        height: 300%;
+    }
+    
+    .layer-1 { 
+        opacity: 0.2;
+        background-size: 40px 40px;
+        transform: translateZ(-2px) scale(3);
+    }
+    .layer-2 { 
+        opacity: 0.15;
+        background-size: 60px 60px;
+        transform: translateZ(-1.5px) scale(2.5);
+    }
+    .layer-3 { 
+        opacity: 0.1;
+        background-size: 80px 80px;
+        transform: translateZ(-1px) scale(2);
+    }
+    
+    .container {
+        padding: 0 25px;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+    }
+}
+
+/* Tablets (Landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .parallax-layer {
+        animation-duration: 100s !important;
+        background-size: 70px 70px !important;
+        width: 180%;
+        height: 400%;
+    }
+    
+    .layer-1 { 
+        opacity: 0.25;
+        background-size: 45px 45px;
+        transform: translateZ(-2.5px) scale(3.5);
+    }
+    .layer-2 { 
+        opacity: 0.2;
+        background-size: 70px 70px;
+        transform: translateZ(-2px) scale(3);
+    }
+    .layer-3 { 
+        opacity: 0.15;
+        background-size: 90px 90px;
+        transform: translateZ(-1.5px) scale(2.5);
+    }
+    
+    .container {
+        padding: 0 30px;
+    }
+    
+    .scroll-indicator {
+        bottom: 25px;
+    }
+}
+
+/* Desktop and larger tablets */
+@media (min-width: 1025px) {
+    .scroll-indicator {
+        bottom: 30px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .parallax-layer {
+        background-size: 50px 50px !important;
+    }
+    
+    .layer-1 { background-size: 35px 35px; }
+    .layer-2 { background-size: 55px 55px; }
+    .layer-3 { background-size: 75px 75px; }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .parallax-layer {
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    .scroll-indicator {
+        animation: none !important;
+    }
+    
+    .scroll-text,
+    .scroll-line {
+        animation: none !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .scroll-indicator:hover {
+        opacity: 0.8;
+    }
+    
+    .parallax-layer {
+        will-change: auto;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .parallax-layer {
+        width: 150%;
+        height: 350%;
+    }
+}
+
+/* Small height screens (like some tablets in landscape) */
+@media (max-height: 600px) {
+    .section {
+        padding: 40px 0;
+    }
+    
+    .parallax-container {
+        height: 100vh;
+    }
+    
+    .scroll-indicator {
+        bottom: 10px;
+        transform: translateX(-50%) scale(0.8);
+    }
+}

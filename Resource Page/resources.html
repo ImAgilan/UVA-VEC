@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA VEC - Resources</title>
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="/Landing Page/base.css">
+    <link rel="stylesheet" href="/Landing Page/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/footer.css">
+    <link rel="stylesheet" href="/Resource Page/resources.css">
+
+
+
+
+    
+</head>
+<body>
+
+<div class="parallax-background">
+    <div class="parallax-layer layer-1"></div>
+    <div class="parallax-layer layer-2"></div>
+    <div class="parallax-layer layer-3"></div>
+    <div class="parallax-layer layer-4"></div>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <div class="logo">UVA VEC</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/case-studies">Case Studies</a></li>
+                <li><a href="/resources" class="active">Resources</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Resources Hero -->
+<section class="resources-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Expert Resources for Digital Growth</h1>
+            <p class="hero-subtext">Access our library of guides, templates, and tools to accelerate your digital transformation</p>
+        </div>
+    </div>
+</section>
+
+<!-- Resource Categories -->
+<section class="resource-categories">
+    <div class="container">
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all">All Resources</button>
+            <button class="category-tab" data-category="guides">Guides</button>
+            <button class="category-tab" data-category="templates">Templates</button>
+            <button class="category-tab" data-category="tools">Tools</button>
+            <button class="category-tab" data-category="webinars">Webinars</button>
+        </div>
+    </div>
+</section>
+
+<!-- Resources Grid -->
+<section class="resources-grid">
+    <div class="container">
+        <div class="grid-container">
+            <!-- Resource 1 -->
+            <div class="resource-card" data-category="guides">
+                <div class="resource-badge">Guide</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/brand-strategy-guide.jpg" alt="Brand Strategy Guide">
+                </div>
+                <div class="resource-content">
+                    <h3>The Complete Brand Strategy Playbook</h3>
+                    <p class="resource-excerpt">Step-by-step framework for developing a powerful brand strategy that differentiates your business.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">45 min read</span>
+                        <span class="meta-item">Updated: June 2023</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Download Now</a>
+                </div>
+            </div>
+
+            <!-- Resource 2 -->
+            <div class="resource-card" data-category="templates">
+                <div class="resource-badge">Template</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/content-calendar-template.jpg" alt="Content Calendar Template">
+                </div>
+                <div class="resource-content">
+                    <h3>Content Marketing Calendar Template</h3>
+                    <p class="resource-excerpt">Full-year planning template with campaign tracking and performance metrics built in.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">Excel/Google Sheets</span>
+                        <span class="meta-item">Free Download</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Get Template</a>
+                </div>
+            </div>
+
+            <!-- Resource 3 -->
+            <div class="resource-card" data-category="tools">
+                <div class="resource-badge">Tool</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/seo-audit-tool.jpg" alt="SEO Audit Tool">
+                </div>
+                <div class="resource-content">
+                    <h3>Technical SEO Audit Checklist</h3>
+                    <p class="resource-excerpt">Comprehensive checklist to identify and fix technical SEO issues on your website.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">Interactive</span>
+                        <span class="meta-item">Self-Scoring</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Run Audit</a>
+                </div>
+            </div>
+
+            <!-- Resource 4 -->
+            <div class="resource-card" data-category="webinars">
+                <div class="resource-badge">Webinar</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/conversion-webinar.jpg" alt="Conversion Webinar">
+                </div>
+                <div class="resource-content">
+                    <h3>Conversion Rate Optimization Masterclass</h3>
+                    <p class="resource-excerpt">Recorded webinar with actionable strategies to boost your website conversion rates.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">72 min video</span>
+                        <span class="meta-item">Slides Included</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Resource 5 -->
+            <div class="resource-card" data-category="guides">
+                <div class="resource-badge">Guide</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/social-media-guide.jpg" alt="Social Media Guide">
+                </div>
+                <div class="resource-content">
+                    <h3>2023 Social Media Algorithm Guide</h3>
+                    <p class="resource-excerpt">Latest insights on how algorithms work across all major social platforms.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">32 min read</span>
+                        <span class="meta-item">Quarterly Updates</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Resource 6 -->
+            <div class="resource-card" data-category="templates">
+                <div class="resource-badge">Template</div>
+                <div class="resource-image">
+                    <img src="/Resources Page/images/ux-questionnaire.jpg" alt="UX Questionnaire">
+                </div>
+                <div class="resource-content">
+                    <h3>Client UX Questionnaire Template</h3>
+                    <p class="resource-excerpt">Comprehensive questions to gather key UX requirements from clients.</p>
+                    <div class="resource-meta">
+                        <span class="meta-item">Editable DOCX</span>
+                        <span class="meta-item">45 Questions</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more">
+            <button class="btn btn-outline">Load More Resources</button>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="newsletter-cta">
+    <div class="container">
+        <div class="cta-content">
+            <div class="cta-text">
+                <h2>Get Our Best Resources Delivered Monthly</h2>
+                <p>Join 15,000+ marketers and business owners who receive our exclusive resource roundups.</p>
+            </div>
+            <div class="cta-form">
+                <form>
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>UVA VEC</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Building iconic digital brands with strategy, design, and technology that drives real business results.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💻</a>
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">🔗</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="/services/brand-strategy">Brand Strategy</a></li>
+                    <li><a href="/services/web-development">Web Development</a></li>
+                    <li><a href="/services/digital-marketing">Digital Marketing</a></li>
+                    <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="/services/content-creation">Content Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/gdpr">GDPR Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 UVA VEC. All rights reserved. Building the future, one brand at a time.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/Landing Page/script.js"></script>
+<script src="/Resource Page/resources.js"></script>
+</body>
+</html>
