@@ -147,18 +147,244 @@
 
 
 
+/* Grid and Card Layout Fixes */
+.subservices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    cursor: default; 
+      align-items: start;/* Ensure grid doesn't have pointer cursor */
+}
+
+.subservice-card {
+      height: auto; /* Remove fixed height if any */
+    min-height: 120px; /* Set minimum height for collapsed state */
+    transition: all 0.3s ease, height 0s; /* Remove height from transition */
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: default !important; /* Force default cursor on cards */
+    position: relative;
+    isolation: isolate; /* Create new stacking context */
+}
+
+.subservice-card:hover {
+    border-color: var(--electric-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
 
+.subservice-details {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    will-change: max-height; /* Improves performance */
+}
 
+/* Header specific styles */
+.subservice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    cursor: default !important; /* Force default cursor */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    z-index: 1;
+}
 
+.subservice-header * {
+    cursor: default !important;
+}
 
+.subservice-header h3 {
+    margin: 0;
+    flex: 1;
+    pointer-events: none; /* Prevent text from being clickable */
+}
 
+.subservice-icon {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    pointer-events: none; /* Prevent icon from being clickable */
+}
 
+.subservice-icon svg {
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+}
 
+/* Toggle button - the ONLY clickable element in header */
+.toggle-details {
+      transition: transform 0.3s ease;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 12px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    position: relative !important;
+    z-index: 100 !important; /* Highest z-index */
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+}
 
+.toggle-details:hover {
+    background: rgba(var(--electric-blue-rgb), 0.1) !important;
+    transform: scale(1.1) !important;
+}
 
+.toggle-details:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(var(--electric-blue-rgb), 0.3) !important;
+}
 
+.toggle-details svg {
+    width: 20px !important;
+    height: 20px !important;
+    transition: transform 0.3s ease !important;
+    pointer-events: none !important;
+    display: block !important;
+}
 
+/* Active state */
+.subservice-card.active .toggle-details svg {
+    transform: rotate(180deg) !important;
+}
+
+/* Details section */
+.subservice-details {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    cursor: default;
+}
+
+.subservice-card.active .subservice-details {
+    display: block;
+}
+
+.details-content {
+    margin-bottom: 1.5rem;
+}
+
+.details-content h4 {
+    color: var(--electric-blue);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.details-content ul,
+.details-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.details-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-item {
+    background: var(--electric-blue);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.case-study {
+    background: rgba(var(--electric-blue-rgb), 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--electric-blue);
+}
+
+.case-study h4 {
+    color: var(--electric-blue);
+    margin-bottom: 1rem;
+}
+
+.case-study p {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Buttons remain clickable */
+.btn {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background: var(--electric-blue);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: color-mix(in srgb, var(--electric-blue) 90%, black);
+    transform: translateY(-1px);
+}
+
+/* Ensure links remain clickable */
+a {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .subservices-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .subservice-header {
+        padding: 1rem;
+    }
+    
+    .subservice-details {
+        padding: 0 1rem 1rem;
+    }
+}
 
 
 
@@ -347,9 +573,9 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
-    border: 3px solid;
-    border-radius: 25px;
-    border-color: aqua;
+
+    height: 50PX;
+ 
    
 }
 

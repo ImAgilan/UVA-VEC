@@ -1,27 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Toggle subservice details
-    const toggleButtons = document.querySelectorAll('.toggle-details');
+// Replace your existing subservice card toggle code with this:
+const uvaVecSubserviceCards = document.querySelectorAll('.subservice-card');
+uvaVecSubserviceCards.forEach(card => {
+    const header = card.querySelector('.subservice-header');
+    const toggleBtn = card.querySelector('.toggle-details');
+    const details = card.querySelector('.subservice-details');
     
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.subservice-card');
+    if (header && toggleBtn && details) {
+        header.addEventListener('click', function(e) {
+            // Close all other open cards first
+            uvaVecSubserviceCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('active')) {
+                    const otherDetails = otherCard.querySelector('.subservice-details');
+                    const otherToggle = otherCard.querySelector('.toggle-details');
+                    otherCard.classList.remove('active');
+                    otherDetails.style.maxHeight = '0';
+                    otherToggle.style.transform = '';
+                }
+            });
+
+            // Toggle current card
             card.classList.toggle('active');
             
-            // Close other open cards in the same section
             if (card.classList.contains('active')) {
-                const parentGrid = card.closest('.subservices-grid');
-                const allCards = parentGrid.querySelectorAll('.subservice-card');
-                
-                allCards.forEach(otherCard => {
-                    if (otherCard !== card && otherCard.classList.contains('active')) {
-                        otherCard.classList.remove('active');
-                    }
-                });
+                // Calculate exact height needed
+                details.style.maxHeight = details.scrollHeight + 'px';
+                toggleBtn.style.transform = 'rotate(180deg)';
+            } else {
+                details.style.maxHeight = '0';
+                toggleBtn.style.transform = '';
             }
         });
-    });
-
-
+        
+        // Initialize all cards as closed
+        details.style.maxHeight = '0';
+    }
+});
 
 
 
@@ -129,4 +142,4 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
         observer.observe(card);
     });
-});
+;
