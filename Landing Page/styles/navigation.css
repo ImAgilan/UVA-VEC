@@ -108,7 +108,7 @@ nav {
 }
 
 .nav-links .contact-btn:hover {
-    background: #0099cc;
+    background: #29caff;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 153, 204, 0.3);
 }
@@ -127,7 +127,7 @@ nav {
 }
 
 .nav-links .contact-btn1:hover {
-    background: #00ff2f;
+    background: #00ff9d;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 153, 204, 0.3);
 }
