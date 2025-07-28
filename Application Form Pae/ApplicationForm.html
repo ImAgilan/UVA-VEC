@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Position | UVA VEC Careers</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    
+    <link rel="stylesheet" href="/Landing Page/styles/base.css">
+    <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/styles/footer.css">
+    <link rel="stylesheet" href="/About us Page/aboutus.css">
+    
+    <style>
+        /* Application Form Specific Styles */
+        .application-hero {
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            text-align: center;
+        }
+        
+        .application-hero .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .application-hero .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .application-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .application-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .application-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .application-header p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .application-form {
+            background: var(--dark-card);
+            padding: 50px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .form-section-header {
+            margin-bottom: 30px;
+        }
+        
+        .form-section-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--electric-blue);
+        }
+        
+        .form-section-header p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .form-group label.required::after {
+            content: ' *';
+            color: #ff4d4d;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23888888'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .file-upload-label:hover {
+            border-color: var(--electric-blue);
+        }
+        
+        .file-upload-label span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex-grow: 1;
+            margin-right: 15px;
+        }
+        
+        .file-upload-button {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--electric-blue);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+        
+        .checkbox-input {
+            margin-right: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .form-footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .form-disclaimer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .application-hero .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .application-form {
+                padding: 30px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .application-hero .hero-title {
+                font-size: 2rem;
+            }
+            
+            .application-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-section-header h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="parallax-background">
+    <div class="parallax-layer layer-1"></div>
+    <div class="parallax-layer layer-2"></div>
+    <div class="parallax-layer layer-3"></div>
+    <div class="parallax-layer layer-4"></div>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="/elements/logo.png" alt="Company Logo" class="logo-img">
+                <span class="company-name">UVA VEC</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/Services Page/mainservices.html"  >Services</a></li>
+                <li><a href="/About us Page/aboutus.html">About</a></li>
+                <li><a href="/Resource Page/resources.html">Resources</a></li>
+                <li><a href="/Casestudies/casestudies.html" >CaseStudies</a></li>
+                <li><a href="/Casestudies/casestudies.html">Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="contact-btn">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Application Hero Section -->
+<section class="application-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Join Our Team</h1>
+            <p class="hero-subtitle">We're excited you're considering a career with UVA VEC. Please fill out the form below to apply for the position.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Application Form -->
+<div class="application-container">
+    <div class="application-header">
+        <h2>Application for: <span id="position-title">Senior UX Designer</span></h2>
+        <p>Please complete all required fields (*) and submit your application. We'll review your information and get back to you soon.</p>
+    </div>
+    
+    <form class="application-form" id="career-application-form">
+        <!-- Personal Information Section -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Personal Information</h3>
+                <p>Tell us about yourself and how we can contact you</p>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name" class="required">First Name</label>
+                    <input type="text" id="first-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last-name" class="required">Last Name</label>
+                    <input type="text" id="last-name" class="form-control" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country" class="required">Country</label>
+                    <select id="country" class="form-control" required>
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="India">India</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" class="form-control">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile</label>
+                <input type="url" id="linkedin" class="form-control" placeholder="https://linkedin.com/in/yourprofile">
+            </div>
+            
+            <div class="form-group">
+                <label for="portfolio">Portfolio Website (if applicable)</label>
+                <input type="url" id="portfolio" class="form-control" placeholder="https://yourportfolio.com">
+            </div>
+        </div>
+        
+        <!-- Position Information Section -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Position Information</h3>
+                <p>Details about the role you're applying for</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="position" class="required">Position Applied For</label>
+                <select id="position" class="form-control" required>
+                    <option value="" disabled selected>Select a position</option>
+                    <option value="Senior UX Designer">Senior UX Designer</option>
+                    <option value="Full Stack Developer">Full Stack Developer</option>
+                    <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                    <option value="Client Success Manager">Client Success Manager</option>
+                    <option value="Product Manager">Product Manager</option>
+                    <option value="Other">Other (specify below)</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="other-position-group" style="display: none;">
+                <label for="other-position" class="required">Please specify position</label>
+                <input type="text" id="other-position" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="source" class="required">How did you hear about this position?</label>
+                <select id="source" class="form-control" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Company Website">Company Website</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Job Board">Job Board (Indeed, Glassdoor, etc.)</option>
+                    <option value="Referral">Employee Referral</option>
+                    <option value="Recruiter">Recruiter</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="referral-name-group" style="display: none;">
+                <label for="referral-name" class="required">Referral Name</label>
+                <input type="text" id="referral-name" class="form-control">
+            </div>
+            
+            <div class="form-group" id="source-other-group" style="display: none;">
+                <label for="source-other" class="required">Please specify</label>
+                <input type="text" id="source-other" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="availability" class="required">When would you be available to start?</label>
+                <select id="availability" class="form-control" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Immediately">Immediately</option>
+                    <option value="1-2 weeks">1-2 weeks</option>
+                    <option value="1 month">1 month</option>
+                    <option value="2 months">2 months</option>
+                    <option value="3+ months">3+ months</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="salary-expectations">Salary Expectations (annual)</label>
+                <input type="text" id="salary-expectations" class="form-control" placeholder="e.g., $50,000 or negotiable">
+            </div>
+        </div>
+        
+        <!-- Resume & Documents Section -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Resume & Documents</h3>
+                <p>Upload your resume and any supporting documents</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="resume" class="required">Resume/CV</label>
+                <div class="file-upload">
+                    <input type="file" id="resume" class="file-upload-input" accept=".pdf,.doc,.docx" required>
+                    <label for="resume" class="file-upload-label">
+                        <span id="resume-file-name">No file selected</span>
+                        <span class="file-upload-button">Choose File</span>
+                    </label>
+                </div>
+                <small class="form-text">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="cover-letter">Cover Letter (optional)</label>
+                <div class="file-upload">
+                    <input type="file" id="cover-letter" class="file-upload-input" accept=".pdf,.doc,.docx">
+                    <label for="cover-letter" class="file-upload-label">
+                        <span id="cover-letter-file-name">No file selected</span>
+                        <span class="file-upload-button">Choose File</span>
+                    </label>
+                </div>
+                <small class="form-text">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="portfolio-file">Portfolio (optional)</label>
+                <div class="file-upload">
+                    <input type="file" id="portfolio-file" class="file-upload-input" accept=".pdf,.zip">
+                    <label for="portfolio-file" class="file-upload-label">
+                        <span id="portfolio-file-name">No file selected</span>
+                        <span class="file-upload-button">Choose File</span>
+                    </label>
+                </div>
+                <small class="form-text">Accepted formats: PDF, ZIP (Max 10MB)</small>
+            </div>
+        </div>
+        
+        <!-- Work Experience Section -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Work Experience</h3>
+                <p>List your relevant work experience (most recent first)</p>
+            </div>
+            
+            <div id="experience-fields">
+                <div class="experience-entry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company-1" class="required">Company Name</label>
+                            <input type="text" id="company-1" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position-1" class="required">Position</label>
+                            <input type="text" id="position-1" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-date-1" class="required">Start Date</label>
+                            <input type="month" id="start-date-1" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="end-date-1">End Date</label>
+                            <input type="month" id="end-date-1" class="form-control">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="current-1" class="checkbox-input">
+                                    <span>I currently work here</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="responsibilities-1" class="required">Key Responsibilities</label>
+                        <textarea id="responsibilities-1" class="form-control" required></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" id="add-experience" class="btn btn-secondary" style="margin-top: 15px;">+ Add Another Position</button>
+        </div>
+        
+        <!-- Education Section -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Education</h3>
+                <p>List your educational background (most recent first)</p>
+            </div>
+            
+            <div id="education-fields">
+                <div class="education-entry">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="institution-1" class="required">Institution</label>
+                            <input type="text" id="institution-1" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="degree-1" class="required">Degree/Qualification</label>
+                            <input type="text" id="degree-1" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="field-1" class="required">Field of Study</label>
+                            <input type="text" id="field-1" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="graduation-1" class="required">Graduation Year</label>
+                            <input type="number" id="graduation-1" class="form-control" min="1900" max="2099" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" id="add-education" class="btn btn-secondary" style="margin-top: 15px;">+ Add Another Institution</button>
+        </div>
+        
+        <!-- Additional Information -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Additional Information</h3>
+                <p>Anything else you'd like us to know</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="skills">Relevant Skills & Expertise</label>
+                <textarea id="skills" class="form-control" placeholder="List any skills, certifications, or technologies you're proficient in"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="why-uvavec">Why do you want to work at UVA VEC?</label>
+                <textarea id="why-uvavec" class="form-control"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="additional-info">Anything else you'd like to share?</label>
+                <textarea id="additional-info" class="form-control"></textarea>
+            </div>
+        </div>
+        
+        <!-- Equal Opportunity & Privacy -->
+        <div class="form-section">
+            <div class="form-section-header">
+                <h3>Equal Opportunity & Privacy</h3>
+                <p>UVA VEC is an equal opportunity employer</p>
+            </div>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="privacy-consent" class="checkbox-input" required>
+                    <span>I consent to UVA VEC processing my personal data in accordance with the <a href="/privacy-policy" target="_blank">Privacy Policy</a> for recruitment purposes.</span>
+                </label>
+            </div>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="future-opportunities" class="checkbox-input">
+                    <span>I would like to be considered for future opportunities at UVA VEC if I'm not selected for this position.</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Form Footer -->
+        <div class="form-footer">
+            <p class="form-disclaimer">
+                By submitting this application, you acknowledge that all information provided is accurate to the best of your knowledge. 
+                Any false statements may disqualify you from employment or result in termination if discovered after hiring.
+            </p>
+            
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+        </div>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>UVA VEC</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Building iconic digital brands with strategy, design, and technology that drives real business results.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💻</a>
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">🔗</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="/services/brand-strategy">Brand Strategy</a></li>
+                    <li><a href="/services/web-development">Web Development</a></li>
+                    <li><a href="/services/digital-marketing">Digital Marketing</a></li>
+                    <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="/services/content-creation">Content Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/gdpr">GDPR Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 UVA VEC. All rights reserved. Building the future, one brand at a time.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set position title from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const position = urlParams.get('position');
+        if (position) {
+            document.getElementById('position-title').textContent = decodeURIComponent(position);
+            document.getElementById('position').value = decodeURIComponent(position);
+        }
+        
+        // Show/hide other position field
+        const positionSelect = document.getElementById('position');
+        const otherPositionGroup = document.getElementById('other-position-group');
+        
+        positionSelect.addEventListener('change', function() {
+            if (this.value === 'Other') {
+                otherPositionGroup.style.display = 'block';
+                document.getElementById('other-position').required = true;
+            } else {
+                otherPositionGroup.style.display = 'none';
+                document.getElementById('other-position').required = false;
+            }
+        });
+        
+        // Show/hide referral name field
+        const sourceSelect = document.getElementById('source');
+        const referralNameGroup = document.getElementById('referral-name-group');
+        const sourceOtherGroup = document.getElementById('source-other-group');
+        
+        sourceSelect.addEventListener('change', function() {
+            if (this.value === 'Referral') {
+                referralNameGroup.style.display = 'block';
+                sourceOtherGroup.style.display = 'none';
+                document.getElementById('referral-name').required = true;
+                document.getElementById('source-other').required = false;
+            } else if (this.value === 'Other') {
+                referralNameGroup.style.display = 'none';
+                sourceOtherGroup.style.display = 'block';
+                document.getElementById('referral-name').required = false;
+                document.getElementById('source-other').required = true;
+            } else {
+                referralNameGroup.style.display = 'none';
+                sourceOtherGroup.style.display = 'none';
+                document.getElementById('referral-name').required = false;
+                document.getElementById('source-other').required = false;
+            }
+        });
+        
+        // File upload display
+        const fileInputs = {
+            'resume': 'resume-file-name',
+            'cover-letter': 'cover-letter-file-name',
+            'portfolio-file': 'portfolio-file-name'
+        };
+        
+        for (const [inputId, spanId] of Object.entries(fileInputs)) {
+            document.getElementById(inputId).addEventListener('change', function() {
+                const fileName = this.files[0] ? this.files[0].name : 'No file selected';
+                document.getElementById(spanId).textContent = fileName;
+            });
+        }
+        
+        // Current job checkbox
+        document.getElementById('current-1').addEventListener('change', function() {
+            const endDate = document.getElementById('end-date-1');
+            endDate.disabled = this.checked;
+            if (this.checked) {
+                endDate.value = '';
+            }
+        });
+        
+        // Add experience entry
+        let experienceCount = 1;
+        document.getElementById('add-experience').addEventListener('click', function() {
+            experienceCount++;
+            const newEntry = document.createElement('div');
+            newEntry.className = 'experience-entry';
+            newEntry.style.marginTop = '30px';
+            newEntry.style.paddingTop = '30px';
+            newEntry.style.borderTop = '1px dashed rgba(255, 255, 255, 0.1)';
+            newEntry.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company-${experienceCount}">Company Name</label>
+                        <input type="text" id="company-${experienceCount}" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position-${experienceCount}">Position</label>
+                        <input type="text" id="position-${experienceCount}" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="start-date-${experienceCount}">Start Date</label>
+                        <input type="month" id="start-date-${experienceCount}" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="end-date-${experienceCount}">End Date</label>
+                        <input type="month" id="end-date-${experienceCount}" class="form-control">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="current-${experienceCount}" class="checkbox-input">
+                                <span>I currently work here</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="responsibilities-${experienceCount}">Key Responsibilities</label>
+                    <textarea id="responsibilities-${experienceCount}" class="form-control"></textarea>
+                </div>
+            `;
+            
+            document.getElementById('experience-fields').appendChild(newEntry);
+            
+            // Add event listener for new current job checkbox
+            document.getElementById(`current-${experienceCount}`).addEventListener('change', function() {
+                const endDate = document.getElementById(`end-date-${experienceCount}`);
+                endDate.disabled = this.checked;
+                if (this.checked) {
+                    endDate.value = '';
+                }
+            });
+        });
+        
+        // Add education entry
+        let educationCount = 1;
+        document.getElementById('add-education').addEventListener('click', function() {
+            educationCount++;
+            const newEntry = document.createElement('div');
+            newEntry.className = 'education-entry';
+            newEntry.style.marginTop = '30px';
+            newEntry.style.paddingTop = '30px';
+            newEntry.style.borderTop = '1px dashed rgba(255, 255, 255, 0.1)';
+            newEntry.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="institution-${educationCount}">Institution</label>
+                        <input type="text" id="institution-${educationCount}" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="degree-${educationCount}">Degree/Qualification</label>
+                        <input type="text" id="degree-${educationCount}" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="field-${educationCount}">Field of Study</label>
+                        <input type="text" id="field-${educationCount}" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="graduation-${educationCount}">Graduation Year</label>
+                        <input type="number" id="graduation-${educationCount}" class="form-control" min="1900" max="2099">
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('education-fields').appendChild(newEntry);
+        });
+        
+        // Form submission
+        document.getElementById('career-application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show a success message
+            
+            alert('Thank you for your application! We will review your information and contact you if there is a match with the position.');
+            
+            // Reset form
+            this.reset();
+            
+            // Reset file names
+            document.getElementById('resume-file-name').textContent = 'No file selected';
+            document.getElementById('cover-letter-file-name').textContent = 'No file selected';
+            document.getElementById('portfolio-file-name').textContent = 'No file selected';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        });
+    });
+</script>
+
+<script src="/Landing Page/scripts/script.js"></script>
+</body>
+</html>

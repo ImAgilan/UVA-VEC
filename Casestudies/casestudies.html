@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - UVA VEC | Digital Transformation Success Stories</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    
+    <link rel="stylesheet" href="/Landing Page/styles/base.css">
+    <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/styles/footer.css">
+    <link rel="stylesheet" href="/About us Page/aboutus.css">
+    
+    <style>
+        /* Case Studies Specific Styles */
+        .case-studies-hero {
+               height: 500px;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            text-align: center;
+        }
+        
+        .case-studies-hero .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .case-studies-hero .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .case-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--electric-blue);
+            color: var(--text-dark);
+            border-color: var(--electric-blue);
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .case-card {
+            background: var(--dark-card);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .case-card:hover .case-image img {
+            transform: scale(1.1);
+        }
+        
+        .case-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--electric-blue);
+            color: var(--text-dark);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .case-content {
+            padding: 30px;
+        }
+        
+        .case-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .case-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .case-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .case-stat {
+            text-align: center;
+        }
+        
+        .case-stat .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--electric-blue);
+            margin-bottom: 5px;
+        }
+        
+        .case-stat .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .case-study-detail {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .case-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .case-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .case-header .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .case-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+        
+        .case-meta-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--electric-blue);
+        }
+        
+        .case-hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 60px;
+        }
+        
+        .case-content-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .case-section {
+            margin-bottom: 60px;
+        }
+        
+        .case-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--electric-blue);
+        }
+        
+        .case-section p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .case-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .case-image-grid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .case-results {
+            background: var(--gradient-bg);
+            padding: 60px;
+            border-radius: 10px;
+            margin: 60px 0;
+        }
+        
+        .case-results h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            text-align: center;
+        }
+        
+        .result-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .result-stat {
+            text-align: center;
+        }
+        
+        .result-stat .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--electric-blue);
+            margin-bottom: 10px;
+        }
+        
+        .result-stat .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 1200px) {
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .result-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-hero-image {
+                height: 300px;
+            }
+            
+            .case-image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="parallax-background">
+    <div class="parallax-layer layer-1"></div>
+    <div class="parallax-layer layer-2"></div>
+    <div class="parallax-layer layer-3"></div>
+    <div class="parallax-layer layer-4"></div>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="/elements/logo.png" alt="Company Logo" class="logo-img">
+                <span class="company-name">UVA VEC</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/Services Page/mainservices.html"  >Services</a></li>
+                <li><a href="/About us Page/aboutus.html">About</a></li>
+                <li><a href="/Resource Page/resources.html">Resources</a></li>
+                <li><a href="/Casestudies/casestudies.html" class="active">CaseStudies</a></li>
+                  <li><a href="/Careers Page/careers.html">Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="contact-btn">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Case Studies Listing Page -->
+<section class="case-studies-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Success Stories</h1>
+            <p class="hero-subtitle">Explore how we've transformed businesses across industries with our strategic approach to digital branding and technology solutions.</p>
+        </div>
+    </div>
+</section>
+
+<section class="our-story">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Case Studies</span>
+            <h2 class="section-title">Digital Transformations That Deliver Results</h2>
+            <p class="section-subtitle">Each project presents unique challenges that we solve with innovative thinking and technical excellence</p>
+        </div>
+        
+        <div class="case-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        </div>
+        
+        <div class="case-grid">
+            <!-- Case Study 1 -->
+            <div class="case-card" data-category="branding">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="TechStart Branding">
+                    <span class="case-tag">Branding</span>
+                </div>
+                <div class="case-content">
+                    <h3>TechStart Global Rebrand</h3>
+                    <p>Complete brand overhaul for international tech startup including visual identity, messaging, and digital presence.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">300%</div>
+                            <div class="stat-label">Traffic Growth</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">6 Weeks</div>
+                            <div class="stat-label">Project Duration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="case-card" data-category="web">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="GreenEarth Website">
+                    <span class="case-tag">Web Development</span>
+                </div>
+                <div class="case-content">
+                    <h3>GreenEarth Foundation</h3>
+                    <p>Interactive website with donation platform and real-time impact visualization for environmental nonprofit.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">150%</div>
+                            <div class="stat-label">Donations</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">4.8s</div>
+                            <div class="stat-label">Load Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 3 -->
+            <div class="case-card" data-category="ecommerce">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="UrbanStyle E-Commerce">
+                    <span class="case-tag">E-Commerce</span>
+                </div>
+                <div class="case-content">
+                    <h3>UrbanStyle Fashion</h3>
+                    <p>Custom e-commerce platform with AR try-on features and personalized recommendations engine.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">220%</div>
+                            <div class="stat-label">Revenue Growth</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">35%</div>
+                            <div class="stat-label">Repeat Customers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 4 -->
+            <div class="case-card" data-category="mobile">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="FitTrack App">
+                    <span class="case-tag">Mobile App</span>
+                </div>
+                <div class="case-content">
+                    <h3>FitTrack Health App</h3>
+                    <p>Cross-platform fitness application with AI-powered workout plans and nutrition tracking.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">500K+</div>
+                            <div class="stat-label">Downloads</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">App Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 5 -->
+            <div class="case-card" data-category="branding">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Nexus Financial">
+                    <span class="case-tag">Branding</span>
+                </div>
+                <div class="case-content">
+                    <h3>Nexus Financial</h3>
+                    <p>Modern brand identity for fintech startup targeting millennial investors with transparent approach.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Brand Recall</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">3M+</div>
+                            <div class="stat-label">Impressions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 6 -->
+            <div class="case-card" data-category="web">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="GlobalEdu Platform">
+                    <span class="case-tag">Web Development</span>
+                </div>
+                <div class="case-content">
+                    <h3>GlobalEdu Learning</h3>
+                    <p>Scalable online learning platform with video hosting, interactive quizzes, and certification system.</p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Students</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Single Case Study Detail Page (hidden by default, shown when case study is clicked) -->
+<div id="case-study-detail" style="display: none;">
+    <section class="case-study-detail">
+        <div class="container">
+            <div class="case-header">
+                <h1>TechStart Global Rebrand</h1>
+                <div class="case-meta">
+                    <div class="case-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                            <path d="M13 7h-2v6h6v-2h-4z"/>
+                        </svg>
+                        <span>6 Week Project</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                            <path d="M13 7h-2v6h6v-2h-4z"/>
+                        </svg>
+                        <span>Branding & Web</span>
+                    </div>
+                    <div class="case-meta-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                            <path d="M13 7h-2v6h6v-2h-4z"/>
+                        </svg>
+                        <span>2023</span>
+                    </div>
+                </div>
+                <p class="section-subtitle">Complete brand overhaul for international tech startup including visual identity, messaging, and digital presence</p>
+            </div>
+            
+            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="TechStart Branding" class="case-hero-image">
+            
+            <div class="case-content-section">
+                <div class="case-section">
+                    <h2>The Challenge</h2>
+                    <p>TechStart, a rapidly growing SaaS company, found their original branding no longer reflected their market position or ambitious vision. Their visual identity was inconsistent across platforms, their messaging failed to communicate their unique value proposition, and their digital presence couldn't scale with their expanding global operations.</p>
+                    <p>The company needed a complete brand transformation that would:</p>
+                    <ul>
+                        <li>Establish them as leaders in their space</li>
+                        <li>Resonate with enterprise clients while remaining approachable</li>
+                        <li>Work across diverse cultural markets</li>
+                        <li>Provide clear guidelines for consistent implementation</li>
+                    </ul>
+                </div>
+                
+                <div class="case-section">
+                    <h2>Our Approach</h2>
+                    <p>We began with an intensive discovery phase, interviewing stakeholders, analyzing competitors, and auditing their existing brand assets. Our research revealed key insights that informed our strategy:</p>
+                    
+                    <div class="case-image-grid">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Brand Workshop">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Collaboration">
+                    </div>
+                    
+                    <p>We developed a new brand architecture that balanced professionalism with innovation. The visual identity system incorporated:</p>
+                    <ul>
+                        <li>A dynamic color palette that worked in both digital and print</li>
+                        <li>A custom typeface with tech-inspired details</li>
+                        <li>An abstract geometric mark representing connection and growth</li>
+                        <li>Photography guidelines emphasizing human-centric technology</li>
+                    </ul>
+                </div>
+                
+                <div class="case-results">
+                    <h3>The Results</h3>
+                    <div class="result-stats">
+                        <div class="result-stat">
+                            <div class="stat-number">300%</div>
+                            <div class="stat-label">Increase in website traffic</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="stat-number">42%</div>
+                            <div class="stat-label">Higher engagement rates</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="stat-number">2.5x</div>
+                            <div class="stat-label">More media coverage</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Brand recognition</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-section">
+                    <h2>Client Testimonial</h2>
+                    <blockquote>
+                        "UVA VEC transformed our brand from generic to extraordinary. Their strategic approach and attention to detail resulted in an identity that perfectly captures who we are and where we're going. The new branding has been instrumental in our Series B funding round and expansion into three new markets."
+                        <cite>- Sarah Johnson, CMO at TechStart</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CTA Section -->
+<section class="about-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Start Your Success Story?</h2>
+            <p>Let's discuss how we can transform your digital presence and drive measurable results for your business.</p>
+            <div class="cta-buttons">
+                <a href="/contact" class="btn btn-primary">Get in Touch</a>
+                <a href="/services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>UVA VEC</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Building iconic digital brands with strategy, design, and technology that drives real business results.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💻</a>
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">🔗</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="/services/brand-strategy">Brand Strategy</a></li>
+                    <li><a href="/services/web-development">Web Development</a></li>
+                    <li><a href="/services/digital-marketing">Digital Marketing</a></li>
+                    <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="/services/content-creation">Content Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/gdpr">GDPR Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 UVA VEC. All rights reserved. Building the future, one brand at a time.</p>
+        </div>
+    </div>
+</footer>
+<script src="/Landing Page/scripts/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const caseCards = document.querySelectorAll('.case-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active state on buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Filter case studies
+                caseCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Case study click handler (would normally navigate to detail page)
+        caseCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // In a real implementation, this would navigate to a detail page
+                // For this demo, we'll just show the hidden detail section
+                document.getElementById('case-study-detail').style.display = 'block';
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Back button functionality for detail page
+        const backButton = document.createElement('button');
+        backButton.textContent = 'Back to Case Studies';
+        backButton.style.position = 'fixed';
+        backButton.style.top = '20px';
+        backButton.style.left = '20px';
+        backButton.style.zIndex = '1000';
+        backButton.style.padding = '10px 20px';
+        backButton.style.background = 'var(--electric-blue)';
+        backButton.style.color = 'var(--text-dark)';
+        backButton.style.border = 'none';
+        backButton.style.borderRadius = '5px';
+        backButton.style.cursor = 'pointer';
+        backButton.addEventListener('click', function() {
+            document.getElementById('case-study-detail').style.display = 'none';
+        });
+        document.getElementById('case-study-detail').appendChild(backButton);
+    });
+</script>
+
+
+
+</body>
+</html>

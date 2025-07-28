@@ -4,11 +4,10 @@ nav {
     top: 0;
     width: 100%;
     backdrop-filter: blur(20px);
-    background: rgba(10, 10, 15, 0.9);
+  
     z-index: 1000;
     padding: 22px 0;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
- 
 }
 
 .nav-container {
@@ -64,17 +63,38 @@ nav {
     border-radius: 4px;
 }
 
-.nav-links a:hover {
-    color: var(--electric-blue);
-    background: rgba(0, 153, 204, 0.1);
+/* Hover Underline Effect */
+.nav-links a:not(.contact-btn):hover {
+    color:var(--electric-blue);
+}
+
+.nav-links a:not(.contact-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 4px;
+    left: 12px;
+    background-color: var(--electric-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.contact-btn):hover::after {
+    width: calc(100% - 24px); /* 24px = left and right padding */
 }
 
 .nav-links a.active {
     color: white;
-    background: var(--electric-blue);
+    background: #ff00bf;
     border-radius: 20px;
     padding: 8px 18px;
     font-weight: 600;
+}
+
+/* Remove underline effect from active and contact button */
+.nav-links a.active::after,
+.nav-links .contact-btn::after {
+    display: none;
 }
 
 /* Special Contact Button */
@@ -93,6 +113,24 @@ nav {
     box-shadow: 0 4px 12px rgba(0, 153, 204, 0.3);
 }
 
+
+
+
+/* Special Contact Button */
+.nav-links .contact-btn1 {
+    background: #00FF9C;
+    color: rgb(255, 255, 255) !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links .contact-btn1:hover {
+    background: #00ff2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 153, 204, 0.3);
+}
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -138,49 +176,50 @@ nav {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-
-
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
     .nav-container {
-        padding: 0 25px; /* Slightly more padding than desktop */
+        padding: 0 25px;
     }
 
-    /* Logo adjustments */
     .logo-container {
-        gap: 10px; /* Reduce gap between logo and text */
+        gap: 10px;
     }
 
     .logo-img {
-        height: 30px; /* Slightly smaller logo */
+        height: 30px;
     }
 
     .company-name {
-        font-size: 1.3rem; /* Smaller text */
+        font-size: 1.3rem;
     }
 
-    /* Navigation links */
     .nav-links {
-        gap: 15px; /* Tighter spacing */
+        gap: 15px;
     }
 
     .nav-links a {
-        font-size: 0.95rem; /* Slightly smaller font */
-        padding: 6px 10px; /* Compact padding */
+        font-size: 0.95rem;
+        padding: 6px 10px;
     }
 
-    /* Active state & contact button */
     .nav-links a.active,
     .nav-links .contact-btn {
-        padding: 6px 16px; /* Slightly smaller pill shape */
-        border-radius: 18px; /* Slightly less rounded */
+        padding: 6px 16px;
+        border-radius: 18px;
     }
 
-    /* Hide one menu item if needed (optional) */
-    .nav-links li:nth-last-child(2) {
-        display: none; /* Hides "Careers" to save space */
+    /* Adjust hover underline for tablet */
+    .nav-links a:not(.contact-btn)::after {
+        left: 10px;
+        bottom: 2px;
+    }
+
+    .nav-links a:not(.contact-btn):hover::after {
+        width: calc(100% - 20px);
     }
 }
+
 /* Responsive Navigation */
 @media (max-width: 768px) {
     .nav-container {
@@ -240,6 +279,16 @@ nav {
     .hamburger {
         display: block;
     }
+
+    /* Mobile hover underline adjustment */
+    .nav-links a:not(.contact-btn)::after {
+        left: 20px;
+        bottom: 8px;
+    }
+
+    .nav-links a:not(.contact-btn):hover::after {
+        width: calc(100% - 40px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -266,6 +315,15 @@ nav {
     
     .nav-links a {
         padding: 10px 15px;
+        width: calc(100% - 30px);
+    }
+
+    /* Adjust hover underline for small mobile */
+    .nav-links a:not(.contact-btn)::after {
+        left: 15px;
+    }
+
+    .nav-links a:not(.contact-btn):hover::after {
         width: calc(100% - 30px);
     }
 }

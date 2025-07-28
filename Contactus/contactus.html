@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact UVA VEC, digital transformation experts. Get in touch for inquiries, partnerships, or to start your project.">
+    <title>Contact UVA VEC | Digital Transformation Experts</title>
+    
+    <!-- Preload important resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Combine GSAP scripts into one request -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    
+    <!-- Combine CSS files where possible -->
+    <link rel="stylesheet" href="/Landing Page/styles/base.css">
+    <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/styles/footer.css">
+    <link rel="stylesheet" href="/About us Page/aboutus.css">
+    
+    <style>
+       /* Contact Page Specific Styles */
+        :root {
+            --contact-card-bg: var(--dark-card);
+            --contact-border: 1px solid rgba(255, 255, 255, 0.1);
+            --contact-icon-bg: rgba(0, 212, 255, 0.1);
+        }
+
+        .contact-hero {
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            text-align: center;
+        }
+        
+        .contact-hero .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .contact-hero .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: min(700px, 90%);
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        
+        .contact-form-container {
+            max-height: 900px;
+            background: var(--contact-card-bg);
+            padding: clamp(30px, 5vw, 50px);
+            border-radius: 10px;
+            border: var(--contact-border);
+            margin-bottom: 60px;
+        }
+        
+        .contact-form h2,
+        .contact-info h2 {
+            font-size: clamp(1.8rem, 3vw, 2rem);
+            margin-bottom: 30px;
+            color: var(--electric-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: var(--contact-border);
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: var(--contact-border);
+            background: var(--contact-card-bg);
+            padding: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--contact-icon-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--electric-blue);
+        }
+        
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .contact-details p, 
+        .contact-details a {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--electric-blue);
+            text-decoration: underline;
+        }
+        
+        .social-links a {
+            margin-right: 15px;
+            color: var(--electric-blue);
+            text-decoration: none;
+        }
+        
+        .office-locations {
+            margin-top: 60px;
+        }
+        
+        .office-card {
+            background: var(--contact-card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: var(--contact-border);
+        }
+        
+        .office-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .office-card p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .office-map {
+            height: 200px;
+            background: #222;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .office-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .faq-section {
+            padding: 100px 20px;
+            background: var(--gradient-bg);
+        }
+        
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--contact-card-bg);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: var(--contact-border);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--electric-blue);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            padding-bottom: 25px;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+        
+        /* Accessibility improvements */
+        .btn, .faq-question, .contact-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:focus, 
+        .form-control:focus,
+        .faq-question:focus {
+            outline: 2px solid var(--electric-blue);
+            outline-offset: 2px;
+        }
+        
+        /* Reduced motion media query */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-method {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .contact-content {
+                padding: 50px 20px;
+            }
+            
+            .contact-info {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="parallax-background" aria-hidden="true">
+    <div class="parallax-layer layer-1"></div>
+    <div class="parallax-layer layer-2"></div>
+    <div class="parallax-layer layer-3"></div>
+    <div class="parallax-layer layer-4"></div>
+</div>
+
+<!-- Navigation -->
+<nav aria-label="Main navigation">
+    <div class="container">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="/elements/logo.png" alt="UVA VEC Company Logo" class="logo-img" width="40" height="40">
+                <span class="company-name">UVA VEC</span>
+            </div>
+            <button class="hamburger" aria-expanded="false" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/Services Page/mainservices.html">Services</a></li>
+                <li><a href="/About us Page/aboutus.html">About</a></li>
+                <li><a href="/Resource Page/resources.html">Resources</a></li>
+                <li><a href="/Casestudies/casestudies.html">CaseStudies</a></li>
+                <li><a href="/Careers Page/careers.html">Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="contact-btn" aria-current="page">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Contact Hero Section -->
+<section class="contact-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Let's Build Something Amazing</h1>
+            <p class="hero-subtitle">Whether you have a project in mind, want to explore our services, or just want to say hello - we'd love to hear from you.</p>
+            <a href="#contact-form" class="btn btn-primary">Send Us a Message</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<div class="contact-content">
+    <!-- Send Us a Message Form -->
+    <div class="contact-form-container">
+        <form class="contact-form" id="contact-form" aria-labelledby="contact-form-title">
+            <h2 id="contact-form-title">Send Us a Message</h2>
+            
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" required autocomplete="name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" required autocomplete="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" class="form-control" autocomplete="tel">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" class="form-control" required>
+                    <option value="" disabled selected>Select a topic</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="services">Services Information</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="careers">Careers</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+    
+    <!-- Get in Touch Section -->
+    <div class="contact-info">
+        <h2>Get in Touch</h2>
+        
+        <div class="contact-method">
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </div>
+            <div class="contact-details">
+                <h3>Email Us</h3>
+                <p>General inquiries</p>
+                <a href="mailto:hello@uvavec.com">hello@uvavec.com</a>
+            </div>
+        </div>
+        
+        <div class="contact-method">
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+            </div>
+            <div class="contact-details">
+                <h3>Call Us</h3>
+                <p>Monday-Friday, 9am-5pm</p>
+                <a href="tel:+94112345678">+94 112 345 678</a>
+            </div>
+        </div>
+        
+        <div class="contact-method">
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                </svg>
+            </div>
+            <div class="contact-details">
+                <h3>Visit Us</h3>
+                <p>Schedule a meeting at our office</p>
+                <a href="#locations">View office locations</a>
+            </div>
+        </div>
+        
+        <div class="contact-method">
+            <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+            <div class="contact-details">
+                <h3>Social Media</h3>
+                <p>Connect with us online</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="LinkedIn">Instagram</a>
+                    <a href="#" aria-label="Twitter">X</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our Offices Section -->
+    <div class="office-locations" id="locations">
+       
+        
+        <div class="office-card">
+            <h3>Colombo, Sri Lanka</h3>
+            <p>UVA VEC Headquarters</p>
+            <p>123 Digital Avenue, Colombo 03</p>
+            <p>+94 112 345 678</p>
+            
+            <div class="office-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798511757686!2d79.8527554153939!3d6.914682395003807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596b8d5f07b1%3A0x7a0b9c6e6c5f5b1e!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of Colombo Office"></iframe>
+            </div>
+        </div>
+        
+        <div class="office-card">
+            <h3>London, UK</h3>
+            <p>UVA VEC Europe</p>
+            <p>45 Innovation Street, London EC1V 3AB</p>
+            <p>+44 20 7946 0958</p>
+            
+            <div class="office-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.698557060937!2d-0.099898684229521!3d51.519143479637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b5a484e9d9d%3A0x1d1e5e1e1e1e1e1e!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Map of London Office"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section" aria-labelledby="faq-heading">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Need Help?</span>
+            <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find quick answers to common questions about working with us</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" id="faq1-question" aria-expanded="false" aria-controls="faq1-answer">
+                    <h3>What types of projects does UVA VEC take on?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer" id="faq1-answer" aria-labelledby="faq1-question">
+                    <p>We specialize in digital transformation projects including brand strategy, web and mobile development, UX/UI design, and digital marketing. Our team works with clients across industries, from startups to enterprises, helping them create impactful digital experiences.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" id="faq2-question" aria-expanded="false" aria-controls="faq2-answer">
+                    <h3>How do I get started with a project?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer" id="faq2-answer" aria-labelledby="faq2-question">
+                    <p>The process begins with a discovery call where we learn about your goals, challenges, and requirements. From there, we'll provide a proposal outlining our recommended approach, timeline, and investment. Once approved, we assemble the perfect team and begin your project.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" id="faq3-question" aria-expanded="false" aria-controls="faq3-answer">
+                    <h3>What are your typical response times?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer" id="faq3-answer" aria-labelledby="faq3-question">
+                    <p>We strive to respond to all inquiries within 24 hours during business days. For urgent matters, please call our main office line and we'll connect you with the appropriate team member immediately.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" id="faq4-question" aria-expanded="false" aria-controls="faq4-answer">
+                    <h3>Do you work with international clients?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer" id="faq4-answer" aria-labelledby="faq4-question">
+                    <p>Absolutely! With offices in Sri Lanka and the UK, plus remote team members across time zones, we're equipped to serve clients worldwide. Over 60% of our clients are based outside our home countries.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" id="faq5-question" aria-expanded="false" aria-controls="faq5-answer">
+                    <h3>What makes UVA VEC different from other agencies?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                    </svg>
+                </div>
+                <div class="faq-answer" id="faq5-answer" aria-labelledby="faq5-question">
+                    <p>We combine global expertise with local insights, delivering world-class digital solutions at competitive rates. Our strategic approach ensures every project drives measurable business results, not just aesthetic improvements. Plus, our transparent process and dedicated teams create a partnership experience rather than a vendor relationship.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="about-cta" aria-labelledby="cta-heading">
+    <div class="container">
+        <div class="cta-content">
+            <h2 id="cta-heading">Ready to Start Your Project?</h2>
+            <p>Get in touch today to discuss how we can help transform your digital presence.</p>
+            <div class="cta-buttons">
+                <a href="#contact-form" class="btn btn-primary">Contact Us</a>
+                <a href="/services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer aria-label="Footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>UVA VEC</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Building iconic digital brands with strategy, design, and technology that drives real business results.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram">📱</a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">💻</a>
+                    <a href="#" class="social-icon" aria-label="Email">📧</a>
+                    <a href="#" class="social-icon" aria-label="Link">🔗</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="/services/brand-strategy">Brand Strategy</a></li>
+                    <li><a href="/services/web-development">Web Development</a></li>
+                    <li><a href="/services/digital-marketing">Digital Marketing</a></li>
+                    <li><a href="/services/ux-ui-design">UX/UI Design</a></li>
+                    <li><a href="/services/content-creation">Content Creation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/gdpr">GDPR Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 UVA VEC. All rights reserved. Building the future, one brand at a time.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ accordion functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            
+            question.addEventListener('click', () => {
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                question.setAttribute('aria-expanded', !isExpanded);
+            });
+            
+            // Keyboard navigation
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple validation
+                if (!name || !email || !subject || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Here you would typically send the data to your server
+                // For this example, we'll just show an alert
+                alert(`Thank you, ${name}! Your message has been sent. We'll contact you at ${email} soon.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page jump
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+            });
+        }
+    });
+</script>
+
+<script src="/Landing Page/scripts/script.js"></script>
+</body>
+</html>

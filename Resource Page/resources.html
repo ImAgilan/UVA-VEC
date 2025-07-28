@@ -19,10 +19,10 @@
 
 
 
-    <link rel="stylesheet" href="/Landing Page/base.css">
-    <link rel="stylesheet" href="/Landing Page/buttons.css">
-    <link rel="stylesheet" href="/Landing Page/navigation.css">
-    <link rel="stylesheet" href="/Landing Page/footer.css">
+<link rel="stylesheet" href="/Landing Page/styles/base.css">
+    <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/styles/footer.css">
     <link rel="stylesheet" href="/Resource Page/resources.css">
 
 
@@ -39,23 +39,26 @@
     <div class="parallax-layer layer-4"></div>
 </div>
 
-<!-- Navigation -->
 <nav>
     <div class="container">
         <div class="nav-container">
-            <div class="logo">UVA VEC</div>
+            <div class="logo-container">
+                <img src="/elements/logo.png" alt="Company Logo" class="logo-img">
+                <span class="company-name">UVA VEC</span>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/case-studies">Case Studies</a></li>
-                <li><a href="/resources" class="active">Resources</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/Services Page/mainservices.html" >Services</a></li>
+                <li><a href="/About us Page/aboutus.html" >About</a></li>
+                <li><a href="/Resource Page/resources.html" class="active">Resources</a></li>
+                <li><a href="/Casestudies/casestudies.html">CaseStudies</a></li>
+                   <li><a href="/Careers Page/careers.html">Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="contact-btn">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -92,11 +95,11 @@
             <div class="resource-card" data-category="guides">
                 <div class="resource-badge">Guide</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/brand-strategy-guide.jpg" alt="Brand Strategy Guide">
+                    <img src="/Resource Page/resources_images/1.png" alt="Brand Strategy Guide">
                 </div>
                 <div class="resource-content">
-                    <h3>The Complete Brand Strategy Playbook</h3>
-                    <p class="resource-excerpt">Step-by-step framework for developing a powerful brand strategy that differentiates your business.</p>
+                    <h3>The Complete Brand Strategy</h3>
+                    <p class="resource-excerpt">Step-by-step framework for developing a powerful strategy that differentiates business.</p>
                     <div class="resource-meta">
                         <span class="meta-item">45 min read</span>
                         <span class="meta-item">Updated: June 2023</span>
@@ -109,10 +112,10 @@
             <div class="resource-card" data-category="templates">
                 <div class="resource-badge">Template</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/content-calendar-template.jpg" alt="Content Calendar Template">
+                    <img src="/Resource Page/resources_images/2.png" alt="Content Calendar Template">
                 </div>
                 <div class="resource-content">
-                    <h3>Content Marketing Calendar Template</h3>
+                    <h3>Content Marketing Calendar</h3>
                     <p class="resource-excerpt">Full-year planning template with campaign tracking and performance metrics built in.</p>
                     <div class="resource-meta">
                         <span class="meta-item">Excel/Google Sheets</span>
@@ -126,7 +129,7 @@
             <div class="resource-card" data-category="tools">
                 <div class="resource-badge">Tool</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/seo-audit-tool.jpg" alt="SEO Audit Tool">
+                    <img src="/Resource Page/resources_images/3.png" alt="SEO Audit Tool">
                 </div>
                 <div class="resource-content">
                     <h3>Technical SEO Audit Checklist</h3>
@@ -143,10 +146,10 @@
             <div class="resource-card" data-category="webinars">
                 <div class="resource-badge">Webinar</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/conversion-webinar.jpg" alt="Conversion Webinar">
+                    <img src="/Resource Page/resources_images/4.png" alt="Conversion Webinar">
                 </div>
                 <div class="resource-content">
-                    <h3>Conversion Rate Optimization Masterclass</h3>
+                    <h3>Conversion Rate Optimization</h3>
                     <p class="resource-excerpt">Recorded webinar with actionable strategies to boost your website conversion rates.</p>
                     <div class="resource-meta">
                         <span class="meta-item">72 min video</span>
@@ -160,7 +163,7 @@
             <div class="resource-card" data-category="guides">
                 <div class="resource-badge">Guide</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/social-media-guide.jpg" alt="Social Media Guide">
+                    <img src="/Resource Page/resources_images/5.png" alt="Social Media Guide">
                 </div>
                 <div class="resource-content">
                     <h3>2023 Social Media Algorithm Guide</h3>
@@ -177,7 +180,7 @@
             <div class="resource-card" data-category="templates">
                 <div class="resource-badge">Template</div>
                 <div class="resource-image">
-                    <img src="/Resources Page/images/ux-questionnaire.jpg" alt="UX Questionnaire">
+                    <img src="/Resource Page/resources_images/6.png" alt="UX Questionnaire">
                 </div>
                 <div class="resource-content">
                     <h3>Client UX Questionnaire Template</h3>
@@ -269,7 +272,8 @@
     </div>
 </footer>
 
-<script src="/Landing Page/script.js"></script>
+
+<script src="/Landing Page/scripts/script.js"></script>
 <script src="/Resource Page/resources.js"></script>
 </body>
 </html>

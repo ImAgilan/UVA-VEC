@@ -21,15 +21,10 @@
 
 
 
-
-    <link rel="stylesheet" href="/Landing Page/base.css">
-
-    
-    <link rel="stylesheet" href="/Landing Page/buttons.css">
-
-    <link rel="stylesheet" href="/Landing Page/navigation.css">
-
-    <link rel="stylesheet" href="/Landing Page/footer.css">
+    <link rel="stylesheet" href="/Landing Page/styles/base.css">
+    <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
+    <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
+    <link rel="stylesheet" href="/Landing Page/styles/footer.css">
 
     <link rel="stylesheet" href="/About us Page/aboutus.css">
 
@@ -51,27 +46,36 @@
 
 
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">UVA VEC</div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="/Landing Page/index.html">Home</a></li>
-                    <li><a href="/About us Page/aboutus.html">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                      <li><a href="#services">Resources</a></li>
-                    <li><a href="#case-studies">Case Studies</a></li>
-                       <li><a href="#services">Careers</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+
+
+
+
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="/elements/logo.png" alt="Company Logo" class="logo-img">
+                <span class="company-name">UVA VEC</span>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/Services Page/mainservices.html" >Services</a></li>
+                <li><a href="/About us Page/aboutus.html" class="active">About</a></li>
+                <li><a href="/Resource Page/resources.html">Resources</a></li>
+                <li><a href="/Casestudies/casestudies.html">CaseStudies</a></li>
+                     <li><a href="/Careers Page/careers.html">Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="contact-btn">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+  
 
 <!-- About Hero Section -->
 <section class="about-hero">
@@ -419,10 +423,10 @@
 </footer>
 
 <script src="/About us Page/aboutus.js"></script>
-<script src="js/about-page.js"></script>
 
 
 
-<script src="/Landing Page/script.js"></script>
+
+<script src="/Landing Page/scripts/script.js"></script>
 </body>
 </html>

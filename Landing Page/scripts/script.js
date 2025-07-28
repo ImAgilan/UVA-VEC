@@ -625,6 +625,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Testimonial Carousel
 document.addEventListener('DOMContentLoaded', function() {
     const testimonials = document.querySelectorAll('.testimonial-card');

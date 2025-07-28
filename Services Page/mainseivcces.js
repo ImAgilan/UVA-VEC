@@ -36,56 +36,57 @@ uvaVecSubserviceCards.forEach(card => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    // Service tab navigation
+// Add this to mainseivcces.js or create a new file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all service sections and tabs
+    const serviceSections = document.querySelectorAll('.main-service');
     const serviceTabs = document.querySelectorAll('.service-tab');
     
+    // Function to update active tab
+    function updateActiveTab() {
+        let foundActive = false;
+        
+        serviceSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top + window.pageYOffset;
+            const sectionHeight = rect.height;
+            
+            // Check if section is in view
+            if (window.pageYOffset >= sectionTop - 150 && 
+                window.pageYOffset < sectionTop + sectionHeight - 150) {
+                
+                // Remove active class from all tabs
+                serviceTabs.forEach(tab => tab.classList.remove('active'));
+                
+                // Find matching tab and add active class
+                const sectionId = section.getAttribute('id');
+                const matchingTab = document.querySelector(`.service-tab[href="#${sectionId}"]`);
+                
+                if (matchingTab) {
+                    matchingTab.classList.add('active');
+                    foundActive = true;
+                }
+            }
+        });
+        
+        // If no section is active, make first tab active
+        if (!foundActive && serviceTabs.length > 0) {
+            serviceTabs[0].classList.add('active');
+        }
+    }
+    
+    // Run on page load
+    updateActiveTab();
+    
+    // Run on scroll
+    window.addEventListener('scroll', function() {
+        updateActiveTab();
+    });
+    
+    // Smooth scroll for service tabs
     serviceTabs.forEach(tab => {
         tab.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Update active tab
-            serviceTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Scroll to section
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             
@@ -94,52 +95,11 @@ uvaVecSubserviceCards.forEach(card => {
                     top: targetSection.offsetTop - 100,
                     behavior: 'smooth'
                 });
+                
+                // Update active tab immediately
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
             }
         });
     });
-    
-    // Highlight active service based on scroll position
-    const serviceSections = document.querySelectorAll('.main-service');
-    
-    function updateActiveService() {
-        let closestSection = null;
-        let closestDistance = Infinity;
-        
-        serviceSections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const distance = Math.abs(rect.top);
-            
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestSection = section;
-            }
-        });
-        
-        if (closestSection) {
-            const activeId = closestSection.id;
-            serviceTabs.forEach(tab => {
-                tab.classList.toggle('active', tab.getAttribute('href') === `#${activeId}`);
-            });
-        }
-    }
-    
-    window.addEventListener('scroll', updateActiveService);
-    updateActiveService(); // Initial check
-    
-    // Animate cards on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    document.querySelectorAll('.subservice-card').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        observer.observe(card);
-    });
-;
+});

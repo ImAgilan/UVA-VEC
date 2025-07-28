@@ -47,25 +47,16 @@
 
 /* Services Hero Section */
 .services-hero {
-    position: relative;
-    padding: 120px 0 80px;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-  
-    z-index: 10;
+          height: 500px;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            text-align: center;
 }
 
 .services-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 
-    opacity: 0.15;
-    z-index: -1;
 }
 
 .services-hero .container {
@@ -74,23 +65,24 @@
 }
 
 .services-hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-top: 200px;
-    line-height: 1.2;
-    background: linear-gradient(to right, #fff 0%, var(--electric-blue) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
 }
 
 .services-hero .hero-subtext {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.6;
+       font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
 }
 
 /* Animation for the hero text */
@@ -146,16 +138,118 @@
 }
 
 
+/* Service Navigation - Update existing styles */
+.service-navigation {
+    position: sticky;
+    
+    background: #0f188125;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    height: 100px;
+    padding: 0;
+}
+
+.service-tabs {
+   
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.service-tab {
+     margin-top: 10px;;
+    padding: 10px 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.service-tab:hover, 
+.service-tab.active {
+    color: white;
+    background: rgba(var(--electric-blue-rgb), 0.2);
+}
+
+.service-tab.active {
+    color: var(--electric-blue);
+    background: rgba(var(--electric-blue-rgb), 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .service-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .service-tab {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .service-navigation {
+        top: 70px; /* Adjust based on your header height */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Grid and Card Layout Fixes */
 .subservices-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Always 2 equal-width columns */
     gap: 2rem;
     margin-top: 3rem;
-    cursor: default; 
-      align-items: start;/* Ensure grid doesn't have pointer cursor */
+    cursor: default;
+    align-items: start;
 }
+
 
 .subservice-card {
       height: auto; /* Remove fixed height if any */
@@ -183,6 +277,9 @@
     transition: max-height 0.5s ease;
     will-change: max-height; /* Improves performance */
 }
+
+
+
 
 /* Header specific styles */
 .subservice-header {
