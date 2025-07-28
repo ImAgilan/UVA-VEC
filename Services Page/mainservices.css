@@ -101,41 +101,6 @@
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .services-hero {
-        padding: 100px 0 60px;
-    }
-    
-    .services-hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .services-hero .hero-subtext {
-        font-size: 1.1rem;
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-hero {
-        padding: 80px 0 50px;
-    }
-    
-    .services-hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    .services-hero .hero-subtext {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-hero h1 {
-        font-size: 1.8rem;
-    }
-}
 
 
 /* Service Navigation - Update existing styles */
@@ -160,7 +125,7 @@
 }
 
 .service-tab {
-     margin-top: 10px;;
+    margin-top: 10px;
     padding: 10px 20px;
     color: var(--text-secondary);
     text-decoration: none;
@@ -181,30 +146,6 @@
     color: var(--electric-blue);
     background: rgba(var(--electric-blue-rgb), 0.1);
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .service-tabs {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding: 10px 20px;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .service-tab {
-        padding: 8px 15px;
-        font-size: 0.85rem;
-    }
-    
-    .service-navigation {
-        top: 70px; /* Adjust based on your header height */
-    }
-}
-
-
-
-
-
 
 
 
@@ -318,49 +259,6 @@
     pointer-events: none;
 }
 
-/* Toggle button - the ONLY clickable element in header */
-.toggle-details {
-      transition: transform 0.3s ease;
-    background: none !important;
-    border: none !important;
-    cursor: pointer !important;
-    padding: 12px !important;
-    border-radius: 50% !important;
-    transition: all 0.3s ease !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-    position: relative !important;
-    z-index: 100 !important; /* Highest z-index */
-    flex-shrink: 0 !important;
-    margin-left: auto !important;
-}
-
-.toggle-details:hover {
-    background: rgba(var(--electric-blue-rgb), 0.1) !important;
-    transform: scale(1.1) !important;
-}
-
-.toggle-details:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 2px rgba(var(--electric-blue-rgb), 0.3) !important;
-}
-
-.toggle-details svg {
-    width: 20px !important;
-    height: 20px !important;
-    transition: transform 0.3s ease !important;
-    pointer-events: none !important;
-    display: block !important;
-}
-
-/* Active state */
-.subservice-card.active .toggle-details svg {
-    transform: rotate(180deg) !important;
-}
-
 /* Details section */
 .subservice-details {
     display: none;
@@ -467,21 +365,6 @@ a {
     pointer-events: auto !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .subservices-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .subservice-header {
-        padding: 1rem;
-    }
-    
-    .subservice-details {
-        padding: 0 1rem 1rem;
-    }
-}
 
 
 
@@ -700,55 +583,6 @@ a {
     background: var(--electric-blue);
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .subservices-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-header h2 {
-        font-size: 2.4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .service-tabs {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px;
-    }
-    
-    .service-tab {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .subservice-header {
-        padding: 20px;
-    }
-    
-    .subservice-header h3 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .service-header h2 {
-        font-size: 2rem;
-    }
-    
-    .service-description {
-        font-size: 1rem;
-    }
-    
-    .subservice-header {
-        flex-wrap: wrap;
-    }
-    
-    .subservice-icon {
-        margin-bottom: 15px;
-    }
-}
 
 
 
@@ -853,50 +687,23 @@ a {
     animation: pulse 2s infinite;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .service-cta {
-        padding: 80px 0;
-    }
-    
-    .cta-content h2 {
-        font-size: 2.2rem;
-    }
-    
-    .cta-content p {
-        font-size: 1.1rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .service-cta {
-        padding: 60px 0;
-    }
-    
-    .cta-content {
-        padding: 40px 30px;
-    }
-    
-    .cta-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .btn-primary {
-        padding: 14px 28px;
-        font-size: 1rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .cta-content {
-        padding: 30px 20px;
-    }
-    
-    .cta-content h2 {
-        font-size: 1.6rem;
-    }
-    
-    .cta-content p {
-        font-size: 1rem;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

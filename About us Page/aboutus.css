@@ -744,3 +744,371 @@
         text-align: left;
     }
 }
+
+
+/* Base About Hero Styles */
+.about-hero {
+    height: 500px;
+    padding: 180px 0 100px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* Extra Small Devices (iPhone X and similar) */
+@media (max-width: 375px) {
+    .about-hero {
+        height: auto;
+        padding: 120px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+        margin-bottom: 40px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* Small Devices (Samsung A05, A06 and similar) */
+@media (min-width: 376px) and (max-width: 480px) {
+    .about-hero {
+        padding: 140px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-stats {
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        flex: 1 1 45%;
+    }
+}
+
+/* Medium Devices (Samsung A25, A35 and similar) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .about-hero {
+        padding: 160px 0 100px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Large Devices (Samsung S series and similar) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about-hero {
+        padding: 180px 0 120px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+/* Mini Tablets */
+@media (min-width: 600px) and (max-width: 767px) and (orientation: portrait) {
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.8rem !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-stats {
+        gap: 30px;
+    }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1600px) {
+    .about-hero {
+        padding: 220px 0 150px;
+        height: 600px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+        max-width: 800px;
+    }
+    
+    .hero-stats {
+        gap: 60px;
+        margin-top: 80px;
+    }
+    
+    .stat-number {
+        font-size: 3.5rem !important;
+    }
+}
+
+/* Our Story Section - Timeline Responsiveness */
+@media (max-width: 992px) {
+    .story-timeline::before {
+        left: 60px;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-year {
+        margin-bottom: 20px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 180px);
+        margin-left: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline-content {
+        width: 100%;
+        margin-left: 0 !important;
+        padding: 20px;
+    }
+    
+    .timeline-year {
+        width: 100px;
+        height: 100px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Values Grid Responsiveness */
+@media (max-width: 992px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Team Grid Responsiveness */
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-image {
+        height: 300px;
+    }
+}
+
+/* Global Presence Section */
+@media (max-width: 1200px) {
+    .presence-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .presence-map {
+        max-width: 800px;
+        margin: 0 auto 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .presence-stats {
+        flex-direction: column;
+    }
+}
+
+/* Stepper Timeline Responsiveness */
+@media (max-width: 768px) {
+    .stepper-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+    
+    .stepper-progress {
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        height: auto;
+    }
+    
+    .progress-fill {
+        width: 4px;
+        height: 0;
+    }
+    
+    .stepper-milestone {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .milestone-number {
+        margin: 0 20px 0 0;
+        flex-shrink: 0;
+    }
+    
+    .milestone-content {
+        padding-top: 0;
+        text-align: left;
+    }
+}
+
+/* Section Header Responsiveness */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-tag {
+        font-size: 0.9rem;
+    }
+}
+
+/* CTA Section Responsiveness */
+@media (max-width: 768px) {
+    .about-cta {
+        padding: 80px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Orientation-specific adjustments */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .about-hero {
+        padding: 120px 0;
+    }
+}
+
+/* High-density displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .milestone-number {
+        border-width: 3px;
+    }
+    
+    .hero-title {
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+/* Foldable devices */
+@media (max-width: 1023px) and (min-aspect-ratio: 1/1) {
+    .about-hero {
+        padding: 100px 0;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
