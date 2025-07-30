@@ -209,7 +209,125 @@
 }
 
 
+/* Button Styles */
+.btn1 {
+display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  animation: slideInButtons 0.8s ease-out 0.9s both;
+}
 
+.btn1-primary1 {
+  width: 300px;
+  background: linear-gradient(135deg, #00aaff 0%, #8000ff 100%);
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(4, 192, 230, 0.717);
+    align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.btn1-primary1:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+  filter: brightness(1.15);
+  background: linear-gradient(135deg, #7c3aed 0%, #0000ff 100%);
+}
+
+.btn1-secondary1 {
+    width: 300px;
+  background: linear-gradient(135deg, #ff00bf 0%, #ff3232 100%);
+  color: #ffffff;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+}
+
+.btn1-secondary1:hover {
+  background: linear-gradient(135deg, #ff0000 0%, #ff00f7 100%);
+  color: #ffffff;
+  box-shadow: 0 15px 40px rgba(240, 147, 251, 0.6);
+  transform: translateY(-3px);
+}
+
+.btn1-outline1 {
+  background: transparent;
+  color: #10b981;
+  border: 2px solid #10b981;
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+}
+
+.btn1-outline1:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.4);
+  border-color: #059669;
+}
+
+.btn1-large1 {
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 60px;
+}
+
+/* Additional hover effects */
+.btn1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+  
+}
+
+.btn1:hover::before {
+  left: 100%;
+}
+
+/* Pulse effect on focus */
+.btn1:focus {
+  outline: none;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+@keyframes slideInButtons {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {

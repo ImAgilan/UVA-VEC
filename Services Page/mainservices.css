@@ -1,70 +1,31 @@
 
-
-/* Main Service Sections */
-
-
-
-.main-service {
-
-    padding: 100px 0;
-    background: rgba(10, 10, 25, 0.7);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.service-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-}
-
-.service-badge {
-    display: inline-block;
-    background: var(--electric-blue);
-    color: var(--text-dark);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-.service-header h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.service-description {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-}
-
 /* Services Hero Section */
 .services-hero {
-          height: 500px;
-            padding: 180px 0 100px;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
-            text-align: center;
+  height: 600px;
+  padding: 180px 0 100px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.services-hero::before {
-
+.services-hero .container{
+     position: relative;
+  z-index: 2; 
 }
 
-.services-hero .container {
-    position: relative;
-    z-index: 2;
+
+.services-hero .hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .services-hero h1 {
+    
           font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
@@ -96,6 +57,29 @@
         transform: translateY(0);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .services-hero .hero-content {
     animation: fadeInUp 0.8s ease-out forwards;
@@ -163,6 +147,41 @@
 
 
 
+
+.service-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    margin-top: 50px;
+}
+
+.service-badge {
+    display: inline-block;
+    background: var(--electric-blue);
+    color: var(--text-dark);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.service-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, var(--electric-blue), var(--electric-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
 
 
 
@@ -649,26 +668,7 @@ a {
     margin-right: auto;
 }
 
-.btn-primary {
-    display: inline-block;
-    padding: 16px 32px;
-    background: var(--electric-blue);
-    color: var(--text-dark);
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-}
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
-    background: linear-gradient(to right, var(--electric-blue), var(--electric-purple));
-}
 
 /* Animation for CTA */
 @keyframes pulse {

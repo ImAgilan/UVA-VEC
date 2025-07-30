@@ -150,3 +150,358 @@ body {
         text-shadow: 0 0 8px var(--electric-blue);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Services Hero - 1 */
+.services-hero-1 {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.container-1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content-1 h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtext-1 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary-1 {
+    background-color: #fff;
+    color: #6e8efb;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-1:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+/* About Hero - 2 */
+.about-hero-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://example.com/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    color: white;
+    text-align: center;
+}
+
+.container-2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title-2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle-2 {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.btn-primary-2 {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-2:hover {
+    background-color: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Resources Hero - 3 */
+.resources-hero-3 {
+    background-color: #f8f9fa;
+    padding: 90px 0;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.container-3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-content-3 h1 {
+    font-size: 2.8rem;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.hero-subtext-3 {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary-3 {
+    background-color: #20c997;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-3:hover {
+    background-color: #1aa179;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(32, 201, 151, 0.3);
+}
+
+/* Contact Hero - 4 */
+.contact-hero-4 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.container-4 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title-4 {
+    font-size: 3.2rem;
+    margin-bottom: 25px;
+}
+
+.hero-subtitle-4 {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.btn-primary-4 {
+    background-color: #fff;
+    color: #667eea;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary-4:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Case Studies Hero - 5 */
+.case-studies-hero-5 {
+    background: url('https://example.com/case-studies-bg.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 110px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.case-studies-hero-5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.container-5 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title-5 {
+    font-size: 3.3rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle-5 {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.btn-primary-5 {
+    background-color: #4e73df;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-5:hover {
+    background-color: #3a5fca;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Careers Hero - 6 */
+.careers-hero-6 {
+    background: linear-gradient(to right, #0575e6, #021b79);
+    padding: 100px 0;
+    color: white;
+    text-align: center;
+}
+
+.container-6 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title-6 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle-6 {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.btn-primary-6 {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-6:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Application Hero - 7 */
+.application-hero-7 {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.container-7 {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title-7 {
+    font-size: 2.8rem;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle-7 {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.btn-primary-7 {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-7:hover {
+    background-color: #c82333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+
+
+
+
+
