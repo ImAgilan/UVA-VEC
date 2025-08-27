@@ -87,49 +87,6 @@
 
 
 
-/* Service Navigation - Update existing styles */
-.service-navigation {
-    position: sticky;
-    
-    background: #0f188125;
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    height: 100px;
-    padding: 0;
-}
-
-.service-tabs {
-   
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 10px 0;
-    margin: 0;
-}
-
-.service-tab {
-    margin-top: 10px;
-    padding: 10px 20px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.service-tab:hover, 
-.service-tab.active {
-    color: white;
-    background: rgba(var(--electric-blue-rgb), 0.2);
-}
-
-.service-tab.active {
-    color: var(--electric-blue);
-    background: rgba(var(--electric-blue-rgb), 0.1);
-}
 
 
 
@@ -599,7 +556,7 @@ a {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--electric-blue);
+
 }
 
 
@@ -700,6 +657,134 @@ a {
 
 
 
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets (max-width: 991px) */
+@media (max-width: 991px) {
+  .services-hero {
+    height: auto;
+    padding: 120px 20px 80px;
+  }
+
+  .services-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .services-hero .hero-subtext {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .subservices-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
+    gap: 20px;
+  }
+
+  .service-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 100px 15px 60px;
+  }
+
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+
+  .services-hero .hero-subtext {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .service-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 5px 10px;
+  }
+
+  .service-tab {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+    flex: 0 0 auto;
+  }
+
+  .subservices-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .subservice-header {
+    padding: 20px;
+  }
+
+  .subservice-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-content {
+    padding: 40px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .services-hero {
+    padding: 80px 10px 50px;
+  }
+
+  .services-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .services-hero .hero-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .service-badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .service-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .service-description {
+    font-size: 1rem;
+  }
+
+  .cta-content {
+    padding: 30px 15px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
 
 
 
@@ -707,3 +792,99 @@ a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default Desktop */
+.service-navigation {
+  background: #111;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.service-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap; /* desktop can wrap */
+}
+
+.service-tab {
+  padding: 12px 22px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  white-space: nowrap; /* keep text intact */
+  font-size: 16px;
+}
+
+.service-tab:hover,
+.service-tab.active {
+  background: #e63946;
+  color: #fff;
+}
+
+/* ✅ Tablet & Mobile: scrollable tabs */
+@media (max-width: 992px) {
+  .service-tabs {
+    
+    flex-wrap: nowrap;           /* prevent wrapping */
+    overflow-x: auto;            /* enable horizontal scroll */
+    justify-content: flex-start; /* align left */
+    padding: 0 15px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling */
+    scrollbar-width: none;       /* hide scrollbar (Firefox) */
+  }
+
+  .service-tabs::-webkit-scrollbar {
+    display: none; /* hide scrollbar (Chrome, Safari) */
+  }
+
+  .service-tab {
+    flex: 0 0 auto; /* make each tab keep its width */
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* ✅ Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .service-tab {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);   /* start outside right */
+  }
+  100% {
+    transform: translateX(-100%);  /* move completely left */
+  }
+}
+
+
+
+
+
+
+
+.btn-small{
+border: 2px solid #e63978;
+  color: #e63978;
+}

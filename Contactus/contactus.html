@@ -18,11 +18,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     
     <!-- Combine CSS files where possible -->
-    <link rel="stylesheet" href="/Landing Page/styles/base.css">
+<link rel="stylesheet" href="/Landing Page/styles/base.css">
     <link rel="stylesheet" href="/Landing Page/styles/buttons.css">
     <link rel="stylesheet" href="/Landing Page/styles/navigation.css">
     <link rel="stylesheet" href="/Landing Page/styles/footer.css">
- <link rel="stylesheet" href="/About us Page/aboutus.css">
 
         <link rel="stylesheet" href="/Contactus/background.css">
     
@@ -281,6 +280,85 @@
             padding: 0 30px 25px;
         }
         
+
+ /* Add these styles to your existing CSS */
+    
+    /* Center the FAQ header */
+    .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 50px;
+    }
+    
+    .section-tag {
+        display: inline-block;
+        color: var(--electric-blue);
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 20px;
+        color: var(--text-primary);
+    }
+    
+    .section-subtitle {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+    
+    /* Center the CTA section */
+    .about-cta {
+        text-align: center;
+        padding: 80px 20px;
+    
+    }
+    
+    .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .cta-content h2 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        margin-bottom: 20px;
+        color: var(--text-primary);
+    }
+    
+    .cta-content p {
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    @media (max-width: 768px) {
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-buttons .btn {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+
+
+
+
         /* Accessibility improvements */
         .btn, .faq-question, .contact-icon {
             transition: all 0.3s ease;
@@ -329,11 +407,12 @@
 </div>
 
 
+
 <nav>
     <div class="container">
         <div class="nav-container">
          <div class="logo-container">
-            <img src="/elements/logo.png" alt="Company Logo" class="logo-img">
+                    <a href="/index.html" > <img src="/elements/logo.png" alt="Company Logo" class="logo-img">  </a> 
                 <span class="company-name">UVA VEC</span>
             </div>
             <div class="hamburger">
@@ -342,15 +421,14 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="/index.html" >Home</a></li>
+                <li><a href="/index.html"  >Home</a></li>
                 <li><a href="/Services Page/mainservices.html" >Services</a></li>
                 <li><a href="/About us Page/aboutus.html">About</a></li>
                 <li><a href="/Resource Page/resources.html">Resources</a></li>
                 <li><a href="/Casestudies/casestudies.html">CaseStudies</a></li>
-                <li><a href="/Careers Page/careers.html">Careers</a></li>
-                <li><a href="/Contactus/contactus.html" class="contact-btn">Contact</a></li>
-   
-           
+                <li><a href="/Careers Page/careers.html" >Careers</a></li>
+                <li><a href="/Contactus/contactus.html" class="active" class="contact-btn">Contact</a></li>
+     
             </ul>
         </div>
     </div>
@@ -725,17 +803,7 @@
             });
         });
         
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', function() {
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !isExpanded);
-                navLinks.classList.toggle('active');
-            });
-        }
+      
     });
 </script>
 
