@@ -262,7 +262,7 @@
 
 .member-image {
   position: relative;
-  height: 300px;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -351,7 +351,7 @@
 .presence-map {
   position: relative;
   flex: 1;
-  min-height: 400px;
+  min-height: 290px;
   background: var(--card-bg);
   border-radius: 12px;
   border: 1px solid var(--border-color);
